@@ -13,7 +13,6 @@
 	<!-- <link rel="icon" th:href="@{/images/generic.ico}" type="image/x-icon"> -->
 </head>
 <body>
-	
 	<div class="panel panel-default" style="margin: 10px">
 		<div class="panel-heading">
 			<h1 class="panel-title">Lista de convidados</h1>  
@@ -43,7 +42,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="convidado: ${convidados}">
+					<tr th:each="convidado : ${convidados}">
 						<td th:text="${convidado.nome}"></td>
 						<td th:text="${convidado.quantidadeAcompanhantes}"></td>
 					</tr>

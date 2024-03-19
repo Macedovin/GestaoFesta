@@ -25,13 +25,14 @@ public class ConvidadosController {
 		
 		modelAndView.addObject("convidados", convidados.findAll());
 
-		modelAndView.addObject(new Convidado());
+		modelAndView.addObject("convidado", new Convidado());
 		
 		return modelAndView;
 	}
 
 	@PostMapping
 	public String salvar(Convidado convidado) {
+		
 		this.convidados.save(convidado);
 		
 		return "redirect:/convidados";
