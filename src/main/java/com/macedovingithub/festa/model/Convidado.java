@@ -1,6 +1,7 @@
 package com.macedovingithub.festa.model;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -39,6 +40,28 @@ public class Convidado implements Serializable {
 	
 	public void setQuantidadeAcompanhantes(Integer quantidadeAcompanhantes) {
 		this.quantidadeAcompanhantes = quantidadeAcompanhantes;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Convidado other = (Convidado) obj;
+		return Objects.equals(id, other.id);
+	}
+
+	@Override
+	public String toString() {
+		return "Convidado [id=" + id + ", nome=" + nome + ", quantidadeAcompanhantes=" + quantidadeAcompanhantes + "]";
 	}
 	
 	
